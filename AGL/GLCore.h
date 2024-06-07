@@ -6,12 +6,13 @@
 #include "AGLConfig.h"
 #include "GLInput.h"
 #include <rpp/timer.h>
+#include <memory> // std::unique_ptr
 
 namespace AGL
 {
     using rpp::Color3;
     using rpp::Ray;
-    using std::unique_ptr;
+
     struct GLRendererCtx;
 
     class AGL_API GLCore
@@ -19,7 +20,7 @@ namespace AGL
         GLRendererCtx& gl;
 
     public:
-        unique_ptr<class SceneRoot> SceneRoot;
+        std::unique_ptr<class SceneRoot> SceneRoot;
 
         rpp::Timer FrameTimer;
         float DeltaTime = 0.0f;

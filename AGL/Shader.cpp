@@ -292,7 +292,7 @@ namespace AGL
     }
     static GLuint compileShaderFile(const string& filename, time_t* modified, GLenum type)
     {
-        auto f = rpp::file{filename, rpp::READONLY};
+        auto f = rpp::file{filename, rpp::file::READONLY};
         if (!f) {
             //LogError("error: failed to open file '%s'", filename.c_str());
             return 0;

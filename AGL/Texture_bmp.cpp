@@ -18,7 +18,7 @@ namespace AGL
 
     static bool savePaddedBMP(strview fileName, const void* paddedData, int width, int height, int channels)
     {
-        rpp::file file = { fileName, rpp::CREATENEW };
+        rpp::file file = { fileName, rpp::file::CREATENEW };
         if (!file) {
             LogError("Failed to create BMP file '%s'", fileName.to_cstr());
             return false;
